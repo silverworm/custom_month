@@ -8,7 +8,6 @@ class CALENDAR{
 
   function day_in_month($num_month,$year_highness){
     $month_days = 0;
-    print_r($num_month % 2);
     if($num_month % 2 == 0 || $num_month == 13 && $year_highness == false){
       $month_days = 21;
     }else{
@@ -31,16 +30,12 @@ class CALENDAR{
         if($year == self::$start_date + $i_year && $month < $i_month || $year != self::$start_date + $i_year){
           $year_highness = self::year_highness($i_year);
           $days_per_year += self::day_in_month($i_month,$year_highness);
-          print_r('expression_day_per_month'.self::day_in_month($i_month,$year_highness)."<br>");
         }else{
           $days_per_year += $day;
         }
       }
       $counted_days += $days_per_year;
-      print_r('expression_day_per_year'.$days_per_year."<br>");
     }
-    print_r($counted_days."<br>");
-    print_r(floor($counted_days/7)*7);
     return  $counted_days - (floor($counted_days/7)*7) . "<br>";
   }
 
