@@ -36,7 +36,7 @@ class CALENDAR{
       }
       $counted_days += $days_per_year;
     }
-    return  $counted_days - (floor($counted_days/self::$day_in_week)*self::$day_in_week) . "<br>";
+    return  $counted_days - (floor($counted_days/self::$day_in_week)*self::$day_in_week);
   }
 
   function week_day_name($num_day){
