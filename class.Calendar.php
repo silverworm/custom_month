@@ -36,13 +36,13 @@ class CALENDAR{
       }
       $counted_days += $days_per_year;
     }
-    return  $counted_days - (floor($counted_days/7)*7) . "<br>";
+    return  $counted_days - (floor($counted_days/self::$day_in_week)*self::$day_in_week) . "<br>";
   }
 
   function week_day_name($num_day){
     $day_names = ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday'];
     if($num_day == 0){
-      $num_day = 7;
+      $num_day = self::$day_in_week;
     }
     // print_r($num_day);
     return $day_names[$num_day-1];
